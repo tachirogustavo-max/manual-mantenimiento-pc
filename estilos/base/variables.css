@@ -1,0 +1,44 @@
+:root {
+  --marfil: #fff6e7;
+  --vino: #6b172a;
+  --carmin: #c7283e;
+  --oro: #f2c75d;
+  --papel: var(--marfil);
+  --papel-2: #f2e5ce;
+  --hoja: var(--marfil);
+  --tinta: var(--vino);
+  --tinta-2: #813846;
+  --tinta-3: #94555f;
+  --linea: #dec5bd;
+  --linea-fuerte: #ae7b7f;
+  --plano: var(--vino);
+  --plano-2: #521020;
+  --trazo: var(--marfil);
+  --trazo-suave: #d3b3ae;
+  --senal: var(--oro);
+  --aviso-medio: #f2e5ce;
+  --aviso-alto: #f9e1d6;
+  --f-titulo: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --f-texto: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --t-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --t-chico: clamp(0.84rem, 0.82rem + 0.1vw, 0.92rem);
+  --t-h2: clamp(1.9rem, 1.3rem + 2.2vw, 3.1rem);
+  --t-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.45rem);
+  --radio-minimo: 6px;
+  --radio-chico: 12px;
+  --radio-medio: 20px;
+  --radio-grande: 28px;
+  --radio-pildora: 999px;
+  --gutter: clamp(16px, 4.5vw, 44px);
+  --ancho: 1200px;
+  --alto-cabecera: 76px;
+  --alto-barra: 0px;
+  --seguro-abajo: env(safe-area-inset-bottom, 0px);
+}
+
+@media (min-width: 960px) {
+  :root {
+    --radio-grande: 36px;
+  }
+}

@@ -1,0 +1,49 @@
+.huella {
+  fill: rgba(34, 4, 12, 0.5);
+  stroke: none;
+}
+
+.pieza {
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.25s;
+}
+
+.cara {
+  stroke-width: 1;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.adorno {
+  vector-effect: non-scaling-stroke;
+}
+
+.pieza:hover .cara,
+.pieza:focus-visible .cara {
+  stroke: var(--oro);
+  stroke-width: 1.6;
+}
+
+.pieza--activa .cara {
+  stroke: var(--oro);
+  stroke-width: 2;
+}
+
+.dibujo--seleccion .pieza:not(.pieza--activa) {
+  opacity: 0.4;
+}
+
+.globo circle {
+  fill: var(--oro);
+  stroke: var(--vino);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.globo text {
+  fill: var(--vino);
+  font-family: var(--f-texto);
+  font-size: 13px;
+  font-weight: 500;
+}

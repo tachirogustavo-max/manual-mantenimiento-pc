@@ -1,0 +1,36 @@
+.superposicion {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s linear 0.35s;
+}
+
+.superposicion--hoja {
+  z-index: 70;
+}
+
+.superposicion--abierta {
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.superposicion__capa {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(107, 23, 42, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.superposicion--abierta .superposicion__capa {
+  opacity: 1;
+}

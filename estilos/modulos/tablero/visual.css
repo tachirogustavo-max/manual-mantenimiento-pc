@@ -1,0 +1,46 @@
+.tarjeta__insignia {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--vino);
+  color: var(--marfil);
+  box-shadow: 0 4px 10px rgba(40, 14, 20, 0.22);
+}
+
+.tarjeta__insignia svg {
+  width: 20px;
+  height: 20px;
+  --icono-fondo: var(--oro);
+  --icono-fondo-opacidad: 0.75;
+}
+
+@media (min-width: 720px) {
+  .tarjeta__insignia {
+    top: 12px;
+    left: 12px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.tarjeta__foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tarjeta__boton:hover .tarjeta__foto,
+.tarjeta__boton:focus-visible .tarjeta__foto {
+  transform: scale(1.05);
+}
+
+.tarjeta--no-aplica .tarjeta__boton:hover .tarjeta__foto {
+  transform: none;
+}

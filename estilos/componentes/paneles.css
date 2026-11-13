@@ -1,0 +1,22 @@
+.ficha,
+.hoja {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: var(--papel);
+  color: var(--tinta);
+  transition: transform 0.38s cubic-bezier(0.2, 0.85, 0.25, 1);
+}
+
+.ficha {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+
+.superposicion--abierta .ficha,
+.superposicion--abierta .hoja {
+  transform: none;
+}

@@ -1,0 +1,9 @@
+.icono {
+  display: block;
+  fill: currentColor;
+}
+
+.icono__fondo {
+  fill: var(--icono-fondo, currentColor);
+  opacity: var(--icono-fondo-opacidad, 0.2);
+}

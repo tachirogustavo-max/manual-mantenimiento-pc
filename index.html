@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Manual de mantenimiento de computadores</title>
+  <meta name="description" content="Manual de mantenimiento preventivo y correctivo para computadores, con diagnóstico de fallas.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:url" content="https://tachiro-mantenimiento.vercel.app/">
+  <meta property="og:title" content="Mantenimiento de computadores">
+  <meta property="og:description" content="Manual de mantenimiento preventivo y correctivo para computadores, con diagnóstico de fallas.">
+  <meta property="og:image" content="https://tachiro-mantenimiento.vercel.app/recursos/icono-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="theme-color" content="#f2e5ce">
+  <link rel="icon" href="recursos/icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="recursos/icono-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Mantenimiento">
+  <link rel="preload" href="recursos/tipografias/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="estilos/base/tipografias.css">
+  <link rel="stylesheet" href="estilos/base/variables.css">
+  <link rel="stylesheet" href="estilos/base/elementos.css">
+  <link rel="stylesheet" href="estilos/base/contenedor.css">
+  <link rel="stylesheet" href="estilos/base/accesibilidad.css">
+  <link rel="stylesheet" href="estilos/componentes/utilidades.css">
+  <link rel="stylesheet" href="estilos/componentes/icono.css">
+  <link rel="stylesheet" href="estilos/componentes/citas.css">
+  <link rel="stylesheet" href="estilos/componentes/botones.css">
+  <link rel="stylesheet" href="estilos/componentes/sello.css">
+  <link rel="stylesheet" href="estilos/componentes/etiquetas.css">
+  <link rel="stylesheet" href="estilos/base/movimiento_reducido.css">
+  <link rel="stylesheet" href="estilos/disposicion/progreso_lectura.css">
+  <link rel="stylesheet" href="estilos/disposicion/cabecera.css">
+  <link rel="stylesheet" href="estilos/componentes/chip_perfil.css">
+  <link rel="stylesheet" href="estilos/disposicion/barra_inferior.css">
+  <link rel="stylesheet" href="estilos/disposicion/navegacion_adaptable.css">
+  <link rel="stylesheet" href="estilos/modulos/escena/escenario.css">
+  <link rel="stylesheet" href="estilos/modulos/escena/dibujo.css">
+  <link rel="stylesheet" href="estilos/modulos/escena/control.css">
+  <link rel="stylesheet" href="estilos/modulos/escena/detalle.css">
+  <link rel="stylesheet" href="estilos/modulos/escena/isometrico.css">
+  <link rel="stylesheet" href="estilos/modulos/escena/adaptable.css">
+  <link rel="stylesheet" href="estilos/modulos/escena/rotulos.css">
+  <link rel="stylesheet" href="estilos/disposicion/secciones.css">
+  <link rel="stylesheet" href="estilos/disposicion/pie.css">
+  <link rel="stylesheet" href="estilos/modulos/fuentes.css">
+  <link rel="stylesheet" href="estilos/modulos/diagnostico/asistente.css">
+  <link rel="stylesheet" href="estilos/modulos/diagnostico/respuestas.css">
+  <link rel="stylesheet" href="estilos/modulos/diagnostico/acciones.css">
+  <link rel="stylesheet" href="estilos/modulos/diagnostico/resultado.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/cajetin.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/avisos.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/secciones.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/herramientas.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/pasos.css">
+  <link rel="stylesheet" href="estilos/componentes/comando.css">
+  <link rel="stylesheet" href="estilos/componentes/tabla.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/pie.css">
+  <link rel="stylesheet" href="estilos/componentes/tabla_movil.css">
+  <link rel="stylesheet" href="estilos/modulos/tablero/tarjeta.css">
+  <link rel="stylesheet" href="estilos/modulos/tablero/visual.css">
+  <link rel="stylesheet" href="estilos/modulos/busqueda.css">
+  <link rel="stylesheet" href="estilos/modulos/herramientas/instrumentos.css">
+  <link rel="stylesheet" href="estilos/modulos/metodo.css">
+  <link rel="stylesheet" href="estilos/componentes/superposicion.css">
+  <link rel="stylesheet" href="estilos/componentes/paneles.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/panel.css">
+  <link rel="stylesheet" href="estilos/componentes/hoja.css">
+  <link rel="stylesheet" href="estilos/modulos/perfil.css">
+  <link rel="stylesheet" href="estilos/disposicion/hoja_mas.css">
+  <link rel="stylesheet" href="estilos/componentes/paneles_adaptable.css">
+  <link rel="stylesheet" href="estilos/modulos/modo_paso/panel.css">
+  <link rel="stylesheet" href="estilos/modulos/modo_paso/contenido.css">
+  <link rel="stylesheet" href="estilos/modulos/modo_paso/pie.css">
+  <link rel="stylesheet" href="estilos/modulos/ficha/acciones.css">
+  <link rel="stylesheet" href="estilos/impresion.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div class="progreso-lectura" aria-hidden="true"><span id="progreso-lectura"></span></div>
+
+  <header class="cabecera" id="cabecera">
+    <div class="cabecera__interior">
+      <a class="cabecera__marca" href="#inicio" aria-label="Manual de mantenimiento, ir al inicio">
+        <svg class="icono" data-icono="torre" aria-hidden="true" focusable="false"></svg>
+        <span class="cabecera__texto-largo">Manual de mantenimiento</span><span class="cabecera__texto-corto">Manual</span>
+      </a>
+      <nav class="cabecera__nav" aria-label="Secciones del manual">
+        <a href="#diagnostico" data-nav="diagnostico">Diagnóstico</a>
+        <a href="#preventivo" data-nav="preventivo">Preventivo</a>
+        <a href="#correctivo" data-nav="correctivo">Correctivo</a>
+        <a href="#herramientas" data-nav="herramientas">Herramientas</a>
+        <a href="#metodo" data-nav="metodo">Método</a>
+        <a href="#fuentes" data-nav="fuentes">Fuentes</a>
+      </nav>
+      <button class="boton-buscar" type="button" data-abrir-busqueda aria-label="Buscar en el manual">
+        <svg class="icono" data-icono="lupa" aria-hidden="true" focusable="false"></svg>
+      </button>
+      <button class="chip-perfil" type="button" data-chip-perfil aria-label="Configurar el equipo a revisar">
+        <span class="chip-perfil__titulo">Equipo a revisar</span>
+        <span class="chip-perfil__texto" data-chip-texto></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <section class="escena" id="inicio" aria-labelledby="titulo-principal">
+      <div class="escena__marco">
+        <div class="escena__panel">
+          <div class="escena__texto">
+            <h1 id="titulo-principal">Mantenimiento de&nbsp;computadores</h1>
+            <p class="escena__bajada">Procedimientos preventivos y correctivos para escritorio y laptop, ajustados al almacenamiento, la memoria y el firmware del equipo que vas a revisar.</p>
+            <div class="escena__acciones">
+              <a class="boton boton--oro" href="#diagnostico">Diagnosticar una falla</a>
+              <button class="boton boton--contorno" type="button" data-abrir-perfil>Configurar el equipo</button>
+            </div>
+          </div>
+
+          <figure class="escena__dibujo">
+            <svg id="dibujo" class="dibujo" viewBox="0 0 600 400" role="group" aria-label="El equipo con sus piezas separadas. Cada pieza se elige con un toque o con el teclado para ver qué es y qué fichas la usan."></svg>
+            <div class="control" role="group" aria-label="Elegir el modelo y desarmar">
+              <button type="button" class="control__opcion" data-tipo="portatil" aria-pressed="true">Laptop</button>
+              <button type="button" class="control__opcion" data-tipo="escritorio" aria-pressed="false">Escritorio</button>
+              <button type="button" class="control__accion" data-desarmar>Desarmar</button>
+            </div>
+          </figure>
+
+          <div class="detalle" id="pieza-detalle" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="diagnostico" aria-labelledby="titulo-diagnostico">
+      <div class="contenedor">
+        <header class="seccion__encabezado">
+          <h2 id="titulo-diagnostico">Diagnóstico</h2>
+          <p>Responde unas preguntas cortas sobre lo que le pasa al equipo y verás qué fichas revisar primero.</p>
+        </header>
+        <div id="diagnostico-asistente" class="asistente"></div>
+      </div>
+    </section>
+
+    <section class="seccion" id="preventivo" aria-labelledby="titulo-preventivo">
+      <div class="contenedor">
+        <header class="seccion__encabezado">
+          <h2 id="titulo-preventivo">Mantenimiento preventivo</h2>
+          <p>Lo que conviene hacerle a un equipo que todavía funciona: limpieza, pasta térmica, respaldos y revisiones.</p>
+        </header>
+        <ul class="tablero" id="lista-preventivos"></ul>
+      </div>
+    </section>
+
+    <section class="seccion" id="correctivo" aria-labelledby="titulo-correctivo">
+      <div class="contenedor">
+        <header class="seccion__encabezado">
+          <h2 id="titulo-correctivo">Mantenimiento correctivo</h2>
+          <p>Qué revisar, paso a paso, cuando el equipo ya presenta una falla.</p>
+        </header>
+        <ul class="tablero" id="lista-correctivos"></ul>
+      </div>
+    </section>
+
+    <section class="seccion seccion--vino" id="herramientas" aria-labelledby="titulo-herramientas">
+      <div class="contenedor">
+        <header class="seccion__encabezado">
+          <h2 id="titulo-herramientas">Banco de herramientas</h2>
+          <p>Las teclas para entrar a la BIOS, las temperaturas máximas y los voltajes de la fuente, para tenerlos a mano.</p>
+        </header>
+        <div class="banco">
+          <article class="instrumento instrumento--firmware" id="herramientas-firmware">
+            <h3>Teclas de acceso al firmware</h3>
+            <div id="instrumento-firmware" class="instrumento__cuerpo"></div>
+          </article>
+          <article class="instrumento instrumento--temperaturas" id="herramientas-temperaturas">
+            <h3>Límites de temperatura</h3>
+            <div id="instrumento-temperaturas" class="instrumento__cuerpo"></div>
+          </article>
+          <article class="instrumento instrumento--tensiones" id="herramientas-tensiones">
+            <h3>Voltajes de la fuente de poder</h3>
+            <div id="instrumento-tensiones" class="instrumento__cuerpo"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="metodo" aria-labelledby="titulo-metodo">
+      <div class="contenedor">
+        <header class="seccion__encabezado">
+          <h2 id="titulo-metodo">Método de trabajo</h2>
+          <p id="metodo-introduccion"></p>
+        </header>
+        <div class="metodo">
+          <span class="metodo__riel" aria-hidden="true"><span class="metodo__linea" id="metodo-linea"></span></span>
+          <ol class="metodo__pasos" id="metodo-pasos"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="fuentes" aria-labelledby="titulo-fuentes">
+      <div class="contenedor">
+        <header class="seccion__encabezado">
+          <h2 id="titulo-fuentes">Fuentes</h2>
+          <p>Manuales y páginas de soporte de Dell, HP, Lenovo y otros fabricantes, más guías de seguridad eléctrica.</p>
+        </header>
+        <div id="fuentes-lista" class="fuentes"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__interior">
+      <div>
+        <p class="pie__titulo">Manual de mantenimiento preventivo y correctivo de computadores</p>
+        <p>Trabajo para la materia Sistemas Operativos, 2026.</p>
+      </div>
+      <div class="pie__autor">
+        <p>Hecho por <strong>Tachiro Rivas</strong></p>
+        <p>Ingeniería de Sistemas, UNEFA</p>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="barra-inferior" aria-label="Navegación principal">
+    <a href="#inicio" data-nav="inicio">
+      <svg class="icono" data-icono="casa" aria-hidden="true" focusable="false"></svg>
+      <span>Inicio</span>
+    </a>
+    <a href="#diagnostico" data-nav="diagnostico">
+      <svg class="icono" data-icono="diagnostico" aria-hidden="true" focusable="false"></svg>
+      <span>Diagnóstico</span>
+    </a>
+    <a href="#preventivo" data-nav="preventivo">
+      <svg class="icono" data-icono="tabla" aria-hidden="true" focusable="false"></svg>
+      <span>Preventivo</span>
+    </a>
+    <a href="#correctivo" data-nav="correctivo">
+      <svg class="icono" data-icono="engranaje" aria-hidden="true" focusable="false"></svg>
+      <span>Correctivo</span>
+    </a>
+    <button type="button" data-abrir-mas>
+      <svg class="icono" data-icono="menu" aria-hidden="true" focusable="false"></svg>
+      <span>Más</span>
+    </button>
+  </nav>
+
+  <div class="superposicion" id="ficha" role="dialog" aria-modal="true" aria-labelledby="ficha-titulo" tabindex="-1">
+    <div class="superposicion__capa" data-cerrar></div>
+    <div class="ficha">
+      <header class="ficha__cabecera">
+        <button class="boton-icono" type="button" data-cerrar aria-label="Cerrar la ficha">
+          <svg class="icono" data-icono="cerrar" aria-hidden="true" focusable="false"></svg>
+        </button>
+        <span class="ficha__codigo" id="ficha-codigo"></span>
+        <div class="ficha__barra" id="ficha-barra" role="progressbar" aria-label="Avance de los pasos" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        <button class="boton boton--plano boton--chico" type="button" id="ficha-imprimir">Imprimir</button>
+      </header>
+      <div class="ficha__cuerpo desplazable" id="ficha-cuerpo" tabindex="-1"></div>
+    </div>
+  </div>
+
+  <div class="superposicion superposicion--hoja" id="hoja-perfil" role="dialog" aria-modal="true" aria-labelledby="hoja-perfil-titulo" tabindex="-1">
+    <div class="superposicion__capa" data-cerrar></div>
+    <div class="hoja">
+      <header class="hoja__cabecera">
+        <h2 id="hoja-perfil-titulo">Equipo a revisar</h2>
+        <button class="boton boton--primario boton--chico" type="button" data-cerrar>Listo</button>
+      </header>
+      <div class="hoja__cuerpo desplazable" id="hoja-perfil-cuerpo" tabindex="-1"></div>
+    </div>
+  </div>
+
+  <div class="superposicion superposicion--hoja" id="hoja-mas" role="dialog" aria-modal="true" aria-labelledby="hoja-mas-titulo" tabindex="-1">
+    <div class="superposicion__capa" data-cerrar></div>
+    <div class="hoja hoja--corta">
+      <header class="hoja__cabecera">
+        <h2 id="hoja-mas-titulo">Más secciones</h2>
+        <button class="boton boton--plano boton--chico" type="button" data-cerrar>Cerrar</button>
+      </header>
+      <nav class="hoja__enlaces" aria-label="Más secciones">
+        <a href="#herramientas" data-nav="herramientas">Banco de herramientas</a>
+        <a href="#metodo" data-nav="metodo">Método de trabajo</a>
+        <a href="#fuentes" data-nav="fuentes">Fuentes</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="superposicion superposicion--taller" id="modo-paso" role="dialog" aria-modal="true" aria-labelledby="modo-paso-titulo" tabindex="-1">
+    <div class="taller">
+      <header class="taller__cabecera">
+        <button class="boton boton--contorno boton--chico" type="button" data-cerrar>Salir</button>
+        <p class="taller__titulo" id="modo-paso-titulo"></p>
+        <p class="taller__contador mono" id="modo-paso-contador"></p>
+      </header>
+      <div class="taller__barra" id="modo-paso-barra" role="progressbar" aria-label="Avance del modo paso a paso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+      <div class="taller__cuerpo desplazable" id="modo-paso-cuerpo" tabindex="-1"></div>
+      <footer class="taller__pie" id="modo-paso-pie"></footer>
+    </div>
+  </div>
+
+  <div class="superposicion superposicion--buscador" id="buscador" role="dialog" aria-modal="true" aria-label="Buscar en el manual" tabindex="-1">
+    <div class="superposicion__capa" data-cerrar></div>
+    <div class="buscador">
+      <div class="buscador__barra">
+        <svg class="icono" data-icono="lupa" aria-hidden="true" focusable="false"></svg>
+        <input class="buscador__entrada" id="buscador-entrada" type="search" aria-label="Buscar en el manual" placeholder="Buscar fichas, comandos o fabricantes" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="buscador-resultados">
+        <button class="boton boton--plano boton--chico" type="button" data-cerrar>Cerrar</button>
+      </div>
+      <div class="buscador__mensaje" id="buscador-mensaje" aria-live="polite"></div>
+      <ul class="buscador__resultados" id="buscador-resultados" role="listbox" aria-label="Resultados"></ul>
+    </div>
+  </div>
+
+
+  <script src="recursos/librerias/gsap.min.js"></script>
+  <script src="recursos/librerias/ScrollTrigger.min.js"></script>
+  <script src="scripts/espacio.js"></script>
+  <script src="datos/perfiles.js"></script>
+  <script src="datos/procedimientos_preventivos.js"></script>
+  <script src="datos/procedimientos_correctivos.js"></script>
+  <script src="datos/diagnostico.js"></script>
+  <script src="datos/referencias.js"></script>
+  <script src="datos/metodo.js"></script>
+  <script src="datos/fuentes.js"></script>
+  <script src="datos/modelos_escena.js"></script>
+  <script src="datos/visuales.js"></script>
+  <script src="datos/autoria.js"></script>
+  <script src="datos/iconos.js"></script>
+  <script src="datos/busqueda.js"></script>
+  <script src="scripts/nucleo/dom.js"></script>
+  <script src="scripts/nucleo/almacen.js"></script>
+  <script src="scripts/nucleo/movimiento.js"></script>
+  <script src="scripts/nucleo/desplazamiento.js"></script>
+  <script src="scripts/nucleo/portapapeles.js"></script>
+  <script src="scripts/nucleo/impresion.js"></script>
+  <script src="scripts/nucleo/pantalla_activa.js"></script>
+  <script src="scripts/nucleo/sin_conexion.js"></script>
+  <script src="scripts/nucleo/superposicion.js"></script>
+  <script src="scripts/dominio/condiciones.js"></script>
+  <script src="scripts/dominio/perfil.js"></script>
+  <script src="scripts/dominio/progreso.js"></script>
+  <script src="scripts/dominio/procedimientos.js"></script>
+  <script src="scripts/dominio/diagnostico.js"></script>
+  <script src="scripts/componentes/icono.js"></script>
+  <script src="scripts/componentes/citas.js"></script>
+  <script src="scripts/componentes/sello.js"></script>
+  <script src="scripts/componentes/lista.js"></script>
+  <script src="scripts/componentes/tabla.js"></script>
+  <script src="scripts/componentes/comando.js"></script>
+  <script src="scripts/isometrico/proyeccion.js"></script>
+  <script src="scripts/isometrico/materiales.js"></script>
+  <script src="scripts/isometrico/geometria.js"></script>
+  <script src="scripts/isometrico/adornos/ventilador.js"></script>
+  <script src="scripts/isometrico/adornos/frente.js"></script>
+  <script src="scripts/isometrico/adornos/teclas.js"></script>
+  <script src="scripts/isometrico/adornos/superficie.js"></script>
+  <script src="scripts/isometrico/adornos/pantalla.js"></script>
+  <script src="scripts/isometrico/primitiva.js"></script>
+  <script src="scripts/isometrico/caja.js"></script>
+  <script src="scripts/isometrico/medidas.js"></script>
+  <script src="scripts/isometrico/pieza.js"></script>
+  <script src="scripts/modulos/navegacion/hoja_mas.js"></script>
+  <script src="scripts/modulos/navegacion/enlaces.js"></script>
+  <script src="scripts/modulos/navegacion/seccion_activa.js"></script>
+  <script src="scripts/modulos/navegacion/progreso_lectura.js"></script>
+  <script src="scripts/modulos/escena/contexto.js"></script>
+  <script src="scripts/modulos/escena/pintor.js"></script>
+  <script src="scripts/modulos/escena/marcas.js"></script>
+  <script src="scripts/modulos/escena/piezas.js"></script>
+  <script src="scripts/modulos/escena/seleccion.js"></script>
+  <script src="scripts/modulos/escena/desarme.js"></script>
+  <script src="scripts/modulos/escena/giro.js"></script>
+  <script src="scripts/modulos/escena/controles.js"></script>
+  <script src="scripts/modulos/escena/escena.js"></script>
+  <script src="scripts/modulos/perfil/formulario.js"></script>
+  <script src="scripts/modulos/perfil/perfil.js"></script>
+  <script src="scripts/modulos/diagnostico/pregunta.js"></script>
+  <script src="scripts/modulos/diagnostico/resultado.js"></script>
+  <script src="scripts/modulos/diagnostico/animaciones.js"></script>
+  <script src="scripts/modulos/diagnostico/diagnostico.js"></script>
+  <script src="scripts/modulos/tablero/tarjeta.js"></script>
+  <script src="scripts/modulos/tablero/tablero.js"></script>
+  <script src="scripts/modulos/ficha/paso.js"></script>
+  <script src="scripts/modulos/ficha/avance.js"></script>
+  <script src="scripts/modulos/ficha/contenido.js"></script>
+  <script src="scripts/modulos/ficha/historial.js"></script>
+  <script src="scripts/modulos/ficha/ficha.js"></script>
+  <script src="scripts/modulos/modo_paso/pantallas.js"></script>
+  <script src="scripts/modulos/modo_paso/gestos.js"></script>
+  <script src="scripts/modulos/modo_paso/modo_paso.js"></script>
+  <script src="scripts/modulos/herramientas/firmware.js"></script>
+  <script src="scripts/modulos/herramientas/herramientas.js"></script>
+  <script src="scripts/modulos/metodo/metodo.js"></script>
+  <script src="scripts/modulos/fuentes/fuentes.js"></script>
+  <script src="scripts/modulos/busqueda/indice.js"></script>
+  <script src="scripts/modulos/busqueda/buscador.js"></script>
+  <script src="scripts/arranque.js"></script>
+</body>
+</html>

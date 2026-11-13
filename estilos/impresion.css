@@ -1,0 +1,105 @@
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    padding-bottom: 0;
+  }
+
+  html.bloqueado {
+    overflow: visible;
+  }
+
+  .saltar,
+  .progreso-lectura,
+  .cabecera,
+  .barra-inferior {
+    display: none !important;
+  }
+
+  body.imprimiendo-ficha > *:not(#ficha) {
+    display: none !important;
+  }
+
+  body.imprimiendo-ficha #ficha {
+    position: static;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.imprimiendo-ficha .superposicion__capa,
+  body.imprimiendo-ficha .ficha__cabecera,
+  body.imprimiendo-ficha .ficha__perfil,
+  body.imprimiendo-ficha .ficha__otros,
+  body.imprimiendo-ficha .ficha__pie,
+  body.imprimiendo-ficha .ficha__acciones,
+  body.imprimiendo-ficha .comando__copiar,
+  body.imprimiendo-ficha .paso .enlace-boton {
+    display: none !important;
+  }
+
+  body.imprimiendo-ficha .ficha {
+    display: block;
+    position: static;
+    width: auto;
+    transform: none;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  body.imprimiendo-ficha .ficha__cuerpo {
+    overflow: visible;
+    padding: 0;
+  }
+
+  body.imprimiendo-ficha .comando pre {
+    padding: 8px 10px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+
+  body.imprimiendo-ficha .pasos {
+    display: block;
+  }
+
+  body.imprimiendo-ficha .paso,
+  body.imprimiendo-ficha .avisos,
+  body.imprimiendo-ficha .comando {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body.imprimiendo-ficha .ficha__seccion h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  body.imprimiendo-ficha .avisos,
+  body.imprimiendo-ficha .avisos h3,
+  body.imprimiendo-ficha .sello,
+  body.imprimiendo-ficha .paso__numero {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #000 !important;
+  }
+
+  body.imprimiendo-ficha .paso--hecho .paso__texto {
+    color: #000;
+    text-decoration: none;
+  }
+
+  body.imprimiendo-ficha .ficha__firma {
+    display: block;
+    margin-top: 14pt;
+    padding-top: 6pt;
+    border-top: 1px solid #000;
+    font-size: 9pt;
+  }
+}

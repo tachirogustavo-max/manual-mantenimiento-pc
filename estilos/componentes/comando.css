@@ -1,0 +1,35 @@
+.comando {
+  position: relative;
+  margin-top: 10px;
+}
+
+.comando pre {
+  margin: 0;
+  padding: 12px 84px 12px 14px;
+  border-radius: var(--radio-minimo);
+  background: var(--plano);
+  color: var(--trazo);
+  font-family: var(--f-mono);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.comando__copiar {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 68px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--trazo-suave);
+  border-radius: var(--radio-minimo);
+  background: var(--plano);
+  color: var(--trazo);
+  font-size: 0.8rem;
+}
+
+.comando__copiar:hover {
+  background: var(--plano-2);
+}

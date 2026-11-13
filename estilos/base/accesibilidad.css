@@ -1,0 +1,30 @@
+:focus-visible {
+  outline: 3px solid var(--plano);
+  outline-offset: 3px;
+}
+
+.escena :focus-visible,
+.cabecera :focus-visible,
+.pie :focus-visible,
+.taller :focus-visible,
+.avisos--critico :focus-visible,
+.alerta :focus-visible,
+.ficha__cuerpo .comando :focus-visible {
+  outline-color: var(--senal);
+}
+
+.saltar {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--senal);
+  color: var(--tinta);
+  font-weight: 600;
+  transform: translateY(-160%);
+}
+
+.saltar:focus {
+  transform: none;
+}

@@ -1,0 +1,39 @@
+.chip-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  max-width: 62vw;
+  min-height: 44px;
+  padding: 3px 18px;
+  border: 0;
+  border-radius: var(--radio-pildora);
+  background: var(--oro);
+  color: var(--vino);
+  text-align: left;
+  line-height: 1.15;
+}
+
+.chip-perfil:hover {
+  background: #f7d77e;
+}
+
+.chip-perfil:focus-visible {
+  outline-color: var(--marfil);
+}
+
+.chip-perfil__titulo {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.chip-perfil__texto {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.84rem;
+  font-weight: 600;
+}

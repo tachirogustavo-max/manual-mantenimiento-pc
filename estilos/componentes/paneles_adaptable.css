@@ -1,0 +1,29 @@
+@media (min-width: 960px) {
+  .ficha {
+    left: auto;
+    width: min(820px, 100%);
+    transform: translateX(100%);
+    box-shadow: -2px 0 0 var(--tinta);
+  }
+
+  .hoja {
+    left: auto;
+    width: min(500px, 100%);
+    top: 0;
+    max-height: none;
+    border-radius: var(--radio-medio) 0 0 var(--radio-medio);
+    transform: translateX(100%);
+    box-shadow: -2px 0 0 var(--tinta);
+  }
+
+
+  .presets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1120px) {
+  .hoja--corta {
+    display: none;
+  }
+}

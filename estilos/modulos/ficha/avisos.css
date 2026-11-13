@@ -1,0 +1,75 @@
+.avisos {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border: 2px solid var(--vino);
+  background: var(--aviso-medio);
+  border-radius: var(--radio-chico);
+}
+
+.avisos--bajo {
+  border-color: var(--linea-fuerte);
+  background: var(--papel-2);
+}
+
+.avisos--alto {
+  border-color: var(--carmin);
+  background: var(--aviso-alto);
+}
+
+.avisos--critico {
+  border-color: var(--oro);
+  background: var(--vino);
+  color: var(--marfil);
+}
+
+.avisos--critico h3 {
+  color: var(--oro);
+}
+
+.avisos h3 {
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.avisos__lista {
+  display: grid;
+  gap: 8px;
+}
+
+.avisos__lista li {
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.avisos__lista li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 719px) {
+  .avisos {
+    margin: 14px 0;
+    padding: 12px 14px;
+  }
+
+  .avisos h3 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+  }
+
+  .avisos__lista {
+    gap: 5px;
+    font-size: 0.94rem;
+  }
+
+  .avisos__lista li {
+    line-height: 1.42;
+  }
+}

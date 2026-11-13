@@ -1,0 +1,50 @@
+.barra-inferior {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-bottom: var(--seguro-abajo);
+  background: var(--hoja);
+  border: 1px solid var(--linea-fuerte);
+  border-bottom: 0;
+  border-radius: var(--radio-medio) var(--radio-medio) 0 0;
+  overflow: hidden;
+}
+
+.barra-inferior a,
+.barra-inferior button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 56px;
+  padding: 6px 2px;
+  border: 0;
+  border-top: 3px solid transparent;
+  background: transparent;
+  color: var(--tinta-2);
+  font-size: 0.75rem;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.barra-inferior svg {
+  width: 25px;
+  height: 25px;
+  --icono-fondo: var(--oro);
+  --icono-fondo-opacidad: 0.55;
+}
+
+.barra-inferior [aria-current] svg {
+  --icono-fondo-opacidad: 1;
+}
+
+.barra-inferior [aria-current] {
+  color: var(--vino);
+  border-top-color: var(--vino);
+  font-weight: 600;
+}

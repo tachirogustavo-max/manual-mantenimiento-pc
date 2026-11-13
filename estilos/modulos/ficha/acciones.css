@@ -1,0 +1,10 @@
+.ficha__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 4px;
+}
+
+.ficha__firma {
+  display: none;
+}

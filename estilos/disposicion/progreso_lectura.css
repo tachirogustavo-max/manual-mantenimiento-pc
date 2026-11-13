@@ -1,0 +1,17 @@
+.progreso-lectura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  height: 3px;
+  pointer-events: none;
+}
+
+.progreso-lectura span {
+  display: block;
+  height: 100%;
+  background: var(--oro);
+  transform: scaleX(0);
+  transform-origin: left center;
+}

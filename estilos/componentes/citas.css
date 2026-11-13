@@ -1,0 +1,23 @@
+.citas {
+  display: grid;
+}
+
+.citas li {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--linea);
+  font-size: var(--t-chico);
+  line-height: 1.45;
+}
+
+.citas__id {
+  color: var(--tinta-3);
+  font-size: 0.82rem;
+  padding-top: 2px;
+}
+
+.citas a {
+  overflow-wrap: anywhere;
+}

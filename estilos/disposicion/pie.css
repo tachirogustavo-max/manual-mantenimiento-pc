@@ -1,0 +1,52 @@
+.pie {
+  margin: 10px max(10px, env(safe-area-inset-right)) calc(10px + var(--alto-barra) + var(--seguro-abajo)) max(10px, env(safe-area-inset-left));
+  padding: 36px 0;
+  border-radius: var(--radio-grande);
+  background: var(--vino);
+  box-shadow: inset 0 1px 0 rgba(255, 246, 231, 0.12);
+  color: var(--trazo);
+  font-size: var(--t-chico);
+}
+
+.pie__interior {
+  display: grid;
+  gap: 22px;
+}
+
+.pie__interior > div {
+  display: grid;
+  gap: 4px;
+}
+
+.pie__titulo {
+  font-family: var(--f-titulo);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.pie p {
+  color: var(--trazo-suave);
+}
+
+.pie .pie__titulo,
+.pie__autor p:first-child {
+  color: var(--marfil);
+}
+
+.pie__autor strong {
+  color: var(--oro);
+  font-weight: 600;
+}
+
+@media (min-width: 720px) {
+  .pie__interior {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 32px;
+  }
+
+  .pie__autor {
+    text-align: right;
+  }
+}

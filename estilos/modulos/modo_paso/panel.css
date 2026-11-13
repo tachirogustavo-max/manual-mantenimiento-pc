@@ -1,0 +1,68 @@
+.superposicion--taller {
+  z-index: 80;
+}
+
+.taller {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--vino);
+  color: var(--marfil);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0.85, 0.25, 1);
+}
+
+.superposicion--abierta .taller {
+  transform: none;
+}
+
+.taller__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+}
+
+.taller__titulo {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: var(--trazo-suave);
+}
+
+.taller__contador {
+  font-size: 0.9rem;
+  color: var(--oro);
+}
+
+.taller__barra {
+  height: 4px;
+  margin: 0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
+  border-radius: var(--radio-pildora);
+  background: rgba(255, 246, 231, 0.2);
+  overflow: hidden;
+}
+
+.taller__barra span {
+  display: block;
+  height: 100%;
+  background: var(--oro);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.taller__cuerpo {
+  flex: 1;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vh, 56px) max(20px, env(safe-area-inset-right)) 24px max(20px, env(safe-area-inset-left));
+}

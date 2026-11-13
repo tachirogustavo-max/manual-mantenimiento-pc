@@ -1,0 +1,22 @@
+.asistente__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.asistente__acciones .boton {
+  flex: 1 1 140px;
+}
+
+@media (min-width: 720px) {
+  .asistente__acciones {
+    justify-content: flex-end;
+  }
+
+  .asistente__acciones .boton {
+    flex: 0 0 auto;
+    min-width: 170px;
+  }
+}

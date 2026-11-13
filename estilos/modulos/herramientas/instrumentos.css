@@ -1,0 +1,125 @@
+.banco {
+  display: grid;
+  gap: clamp(16px, 3vw, 28px);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.instrumento {
+  min-width: 0;
+  border: 0;
+  background: var(--hoja);
+  color: var(--vino);
+  border-radius: var(--radio-medio);
+  overflow: hidden;
+}
+
+.instrumento > h3 {
+  padding: 12px 18px;
+  background: var(--carmin);
+  color: var(--marfil);
+  font-size: 1.25rem;
+}
+
+.instrumento__cuerpo {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.instrumento__nota {
+  color: var(--tinta-2);
+  font-size: var(--t-chico);
+  line-height: 1.5;
+}
+
+.selector-fabricante {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.selector {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--linea-fuerte);
+  border-radius: var(--radio-chico);
+  background: var(--hoja);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.selector:hover {
+  border-color: var(--tinta);
+}
+
+.selector[aria-pressed='true'] {
+  border-color: var(--tinta);
+  background: var(--tinta);
+  color: var(--papel);
+  font-weight: 600;
+}
+
+.lectura {
+  padding: 14px;
+  border-radius: var(--radio-chico);
+  background: var(--plano);
+  color: var(--trazo);
+  box-shadow: inset 0 0 0 2px var(--oro);
+}
+
+.lectura__teclas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.lectura__bloque {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.lectura__etiqueta {
+  font-size: 0.78rem;
+  color: var(--trazo-suave);
+}
+
+.lectura__valor {
+  font-family: var(--f-mono);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 0.8rem + 1.6vw, 1.7rem);
+  line-height: 1.2;
+  color: var(--senal);
+  overflow-wrap: anywhere;
+}
+
+.lectura__nota {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 246, 231, 0.25);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 960px) {
+  .banco {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .instrumento--firmware {
+    grid-column: span 5;
+  }
+
+  .instrumento--temperaturas {
+    grid-column: span 7;
+  }
+
+  .instrumento--tensiones {
+    grid-column: span 12;
+  }
+}
+
+.seccion--vino .instrumento :focus-visible {
+  outline-color: var(--vino);
+}

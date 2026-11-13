@@ -1,0 +1,19 @@
+.escena__dibujo {
+  min-height: 0;
+  margin: 0 -8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dibujo {
+  -webkit-user-select: none;
+  user-select: none;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  margin-bottom: 64px;
+  display: block;
+  overflow: visible;
+}

@@ -1,0 +1,35 @@
+.ficha__seccion {
+  margin-top: 28px;
+}
+
+.ficha__seccion > h3 {
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--tinta);
+  font-size: 1.5rem;
+}
+
+.lista-simple {
+  display: grid;
+  gap: 6px;
+}
+
+.lista-simple li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.lista-simple li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 2px;
+  background: var(--tinta);
+}
+
+.ficha__seccion--tecnico .lista-simple li::before {
+  background: var(--carmin);
+  height: 3px;
+}

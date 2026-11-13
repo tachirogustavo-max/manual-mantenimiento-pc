@@ -1,0 +1,18 @@
+.rotulo {
+  pointer-events: none;
+}
+
+.rotulo rect {
+  fill: var(--marfil);
+}
+
+.rotulo text {
+  fill: var(--vino);
+  font-family: var(--f-texto);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.capa-marcas .globo {
+  cursor: pointer;
+}

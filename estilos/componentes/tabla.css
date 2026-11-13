@@ -1,0 +1,37 @@
+.tabla-envoltura {
+  overflow-x: auto;
+  border: 1px solid var(--linea-fuerte);
+  background: var(--hoja);
+  border-radius: var(--radio-medio);
+}
+
+.tabla {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: var(--t-chico);
+}
+
+.tabla th,
+.tabla td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--linea);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.tabla thead th {
+  border-bottom: 2px solid var(--tinta);
+  background: var(--papel-2);
+  font-weight: 600;
+}
+
+.tabla tbody th {
+  font-weight: 600;
+}
+
+.tabla tbody tr:last-child td,
+.tabla tbody tr:last-child th {
+  border-bottom: 0;
+}

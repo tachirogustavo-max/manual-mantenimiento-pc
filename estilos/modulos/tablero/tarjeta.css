@@ -1,0 +1,122 @@
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tarjeta {
+  min-width: 0;
+}
+
+.tarjeta__boton {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 1.5px solid var(--linea);
+  border-radius: var(--radio-medio);
+  background: var(--hoja);
+  color: var(--vino);
+  text-align: left;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta__boton:hover {
+  border-color: var(--vino);
+  box-shadow: 0 10px 26px rgba(40, 14, 20, 0.12);
+}
+
+.tarjeta__visual {
+  display: block;
+  flex: none;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  background: var(--papel-2);
+}
+
+.tarjeta__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  padding: 12px 12px 14px;
+}
+
+.tarjeta__fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.tarjeta__codigo {
+  font-size: 0.78rem;
+  color: var(--tinta-3);
+}
+
+.tarjeta .sello {
+  font-size: 0.75rem;
+}
+
+.tarjeta__titulo {
+  font-family: var(--f-titulo);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.92rem + 0.5vw, 1.25rem);
+  line-height: 1.15;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.tarjeta__meta {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--tinta-3);
+}
+
+.tarjeta__avance {
+  display: block;
+  height: 5px;
+  border-radius: var(--radio-pildora);
+  background: var(--papel-2);
+  overflow: hidden;
+}
+
+.tarjeta__avance span {
+  display: block;
+  height: 100%;
+  background: var(--carmin);
+  transform-origin: left center;
+}
+
+.tarjeta--no-aplica .tarjeta__boton {
+  opacity: 0.8;
+  cursor: default;
+}
+
+.tarjeta--no-aplica .tarjeta__boton:hover {
+  border-color: var(--linea);
+  box-shadow: none;
+}
+
+@media (min-width: 720px) {
+  .tablero {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .tarjeta__cuerpo {
+    padding: 16px 18px 18px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .tablero {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

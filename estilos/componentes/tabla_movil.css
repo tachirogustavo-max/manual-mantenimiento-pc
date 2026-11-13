@@ -1,0 +1,68 @@
+@media (max-width: 719px) {
+  .tabla-envoltura {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .tabla {
+    min-width: 0;
+  }
+
+  .tabla thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .tabla tbody,
+  .tabla tr {
+    display: block;
+  }
+
+  .tabla tr {
+    margin-bottom: 10px;
+    padding: 6px 14px;
+    border: 1px solid var(--linea);
+    border-radius: var(--radio-chico);
+    background: var(--hoja);
+  }
+
+  .tabla tbody th,
+  .tabla tbody td {
+    display: grid;
+    grid-template-columns: 7.5em minmax(0, 1fr);
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+
+  .tabla tbody tr > :last-child {
+    border-bottom: 0;
+  }
+
+  .tabla tbody th::before,
+  .tabla tbody td::before {
+    content: attr(data-etiqueta);
+    font-family: var(--f-texto);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--tinta-3);
+  }
+
+  .tabla tbody tr:last-child td,
+  .tabla tbody tr:last-child th {
+    border-bottom: 1px solid var(--linea);
+  }
+
+  .tabla tbody tr:last-child > :last-child {
+    border-bottom: 0;
+  }
+
+  .tabla td,
+  .tabla th {
+    overflow-wrap: anywhere;
+  }
+}

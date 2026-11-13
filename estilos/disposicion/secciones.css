@@ -1,0 +1,59 @@
+.seccion {
+  margin: 10px max(10px, env(safe-area-inset-right)) 10px max(10px, env(safe-area-inset-left));
+  padding-block: clamp(44px, 8vw, 104px);
+  border-radius: var(--radio-grande);
+  background: var(--papel);
+  scroll-margin-top: calc(var(--alto-cabecera) + env(safe-area-inset-top, 0px) - 8px);
+}
+
+.seccion--vino {
+  background: var(--vino);
+  box-shadow: inset 0 1px 0 rgba(255, 246, 231, 0.12);
+  color: var(--marfil);
+}
+
+.seccion--vino .seccion__encabezado {
+  border-top-color: var(--marfil);
+}
+
+.seccion--vino .seccion__encabezado p {
+  color: var(--trazo);
+}
+
+.seccion--vino a:not(.boton) {
+  color: var(--oro);
+}
+
+.seccion--vino :focus-visible {
+  outline-color: var(--oro);
+}
+
+.seccion__encabezado {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  margin-bottom: clamp(28px, 5vw, 56px);
+  padding-top: 22px;
+  border-top: 2px solid var(--tinta);
+}
+
+.seccion__encabezado h2 {
+  font-size: var(--t-h2);
+}
+
+.seccion__encabezado p {
+  max-width: 38em;
+  color: var(--tinta-2);
+}
+
+@media (min-width: 900px) {
+  .seccion__encabezado {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    column-gap: clamp(32px, 6vw, 96px);
+    align-items: end;
+  }
+}
+
+#inicio {
+  scroll-margin-top: 0;
+}

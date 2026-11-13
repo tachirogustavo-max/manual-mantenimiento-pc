@@ -1,0 +1,73 @@
+.escena {
+  position: relative;
+  height: 260dvh;
+  background: var(--papel-2);
+  color: var(--trazo);
+}
+
+.escena--estatica {
+  height: auto;
+}
+
+.escena__marco {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  padding: calc(var(--alto-cabecera) + env(safe-area-inset-top, 0px)) max(10px, env(safe-area-inset-right))
+  calc(10px + var(--alto-barra) + var(--seguro-abajo)) max(10px, env(safe-area-inset-left));
+}
+
+.escena--estatica .escena__marco {
+  position: relative;
+  height: auto;
+  min-height: 100dvh;
+}
+
+.escena__panel {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 6px;
+  padding: clamp(18px, 3vw, 28px) clamp(16px, 4vw, 40px) clamp(14px, 2vw, 22px);
+  border-radius: var(--radio-grande);
+  background: var(--vino);
+  box-shadow: inset 0 1px 0 rgba(255, 246, 231, 0.12);
+  overflow: hidden;
+}
+
+.escena--estatica .escena__panel {
+  height: auto;
+  min-height: calc(100dvh - var(--alto-cabecera) - 20px);
+}
+
+.escena__texto,
+.escena__dibujo,
+.detalle {
+  position: relative;
+  z-index: 1;
+}
+
+.escena__texto h1 {
+  font-size: clamp(2.3rem, 9.4vw, 3.3rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--marfil);
+}
+
+.escena__bajada {
+  max-width: 32em;
+  margin-top: 14px;
+  color: var(--trazo);
+  font-size: var(--t-base);
+  line-height: 1.5;
+}
+
+.escena__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}

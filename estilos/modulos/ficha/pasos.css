@@ -1,0 +1,115 @@
+.pasos {
+  display: grid;
+  gap: 0;
+}
+
+.paso {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.paso__entrada {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.paso__marca {
+  display: block;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+}
+
+.paso__numero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--tinta);
+  background: var(--hoja);
+  font-family: var(--f-titulo);
+  font-weight: 600;
+  font-size: 1.25rem;
+  transition: background-color 0.15s, color 0.15s;
+  border-radius: var(--radio-chico);
+}
+
+.paso__marca:hover .paso__numero {
+  background: var(--papel-2);
+}
+
+.paso__entrada:focus-visible + .paso__marca .paso__numero {
+  outline: 3px solid var(--plano);
+  outline-offset: 3px;
+}
+
+.paso__entrada:checked + .paso__marca .paso__numero {
+  background: var(--tinta);
+  color: transparent;
+}
+
+.paso__entrada:checked + .paso__marca .paso__numero::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  width: 11px;
+  height: 20px;
+  border-right: 4px solid var(--senal);
+  border-bottom: 4px solid var(--senal);
+  transform: rotate(40deg);
+}
+
+.paso--hecho .paso__texto {
+  color: var(--tinta-3);
+}
+
+.paso__texto {
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.paso__detalle {
+  margin-top: 6px;
+  color: var(--tinta-2);
+  font-size: var(--t-chico);
+  line-height: 1.55;
+}
+
+.paso__etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.paso .enlace-boton {
+  margin-top: 4px;
+}
+
+.paso--otro-perfil {
+  opacity: 0.85;
+}
+
+.paso--otro-perfil .paso__numero {
+  border-style: dashed;
+  color: var(--tinta-3);
+}
+
+.ficha__otros {
+  margin-top: 24px;
+  padding: 14px;
+  border: 1px dashed var(--linea-fuerte);
+  border-radius: var(--radio-medio);
+}
+
+.ficha__otros .pasos {
+  margin-top: 8px;
+}
